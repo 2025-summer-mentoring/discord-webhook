@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
     const pr = payload.pull_request;
 
     const embed = {
-      title: `📢 ${pr.user.login}님이 과제를 제출하였습니다! [${pr.title}]`,
+      title: `📢 ${pr.user.login}님이 과제를 제출하였습니다!`,
       description: `**${pr.title}**\n`,
       url: pr.html_url,
       color: 3447003
