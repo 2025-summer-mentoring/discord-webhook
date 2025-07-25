@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const express = require('express');
+const serverless = require('serverless-http');
 const crypto = require('crypto');
 const axios = require('axios');
 const app = express();
@@ -46,5 +47,5 @@ app.post('/github-webhook', (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
+module.exports.handler = serverless(app);
